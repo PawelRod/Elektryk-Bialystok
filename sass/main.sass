@@ -1,0 +1,734 @@
+* > a
+    text-decoration: none
+    
+body, html
+    margin: 0
+    padding: 0
+    font-family: 'Poppins', sans-serif
+    overflow-x: hidden
+    scroll-behavior: smooth
+
+.container
+    position: relative
+    left: 0
+    transition: .3s left
+
+.container--move
+    left: 350px
+    transition: .3s left
+
+.container__cover
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background: rgba(0, 0, 0, .9)
+    z-index: 4
+    visibility: hidden
+    opacity: 0
+    transition: all .3s, background 1.5s
+    box-shadow: inset 200px 14px 163px -44px rgba(0,0,0,0.75)
+    cursor: pointer
+
+.container__cover:hover
+    background: rgba(0,0,0, .5)
+    transition: all 5s linear, all .4s linear
+
+.container__cover--dark
+    visibility: visible
+    opacity: 1
+
+.menu
+    position: fixed
+    left: -350px
+    height: 100%
+    width: 350px
+    background: #7C0A0A
+    z-index: 4
+    border-bottom: solid 1px #7C0A0A
+    transition: all .3s
+
+.menu.menu--slidein
+    left: 0
+
+.menu.menu--outline
+    outline: 3px solid #A91515
+    outline-offset: 7px
+
+.menu__button
+    position: fixed
+    display: flex
+    align-items: center
+    justify-content: center
+    top: 20px
+    left: -60px
+    height: 50px
+    width: 60px
+    cursor: pointer
+    transition: all .3s
+
+.menu__button--fadein
+    left: 20px
+
+.menu__button--crucifix
+    left: 260px
+    transition: left .35s
+    .menu__hamburger
+        background: #7C0A0A
+    .menu__hamburger:after
+        background: white
+        transform: rotate(-45deg)
+        margin-bottom: 20px
+    .menu__hamburger:before
+        background: white
+        transform: rotate(45deg)
+        margin-top: 20px
+
+.menu__button:hover.menu__button--crucifix
+    .menu__hamburger
+        background: #7C0A0A
+
+.menu__hamburger
+    width: 100%
+    height: 10px
+    border-radius: 4px
+    background: #a9151591
+    transition: all .3s
+
+.menu__hamburger:after
+    content: ""
+    position: absolute
+    bottom: 0
+    width: 100%
+    height: 10px
+    border-radius: 4px
+    background: #a9151591
+    transition: all .3s
+
+.menu__hamburger:before
+    content: ""
+    position: absolute
+    top: 0
+    width: 100%
+    height: 10px
+    border-radius: 4px
+    background: #a9151591
+    transition: all .3s
+
+.menu__button:hover
+    .menu__hamburger, .menu__hamburger:after, .menu__hamburger:before
+        background: #A91515
+
+.menu__scrolltop
+    position: fixed
+    display: flex
+    align-items: center
+    justify-content: center
+    background: #a9151591
+    right: -60px
+    bottom: 20px
+    width: 60px
+    height: 60px
+    z-index: 4
+    transition: all .3s
+
+.menu__scrolltop:hover
+    background: #A91515
+
+.menu__scrolltop.menu__scrolltop--fadein
+    right: 20px
+
+.menu__scrolltop.menu__scrolltop--moveright
+    right: -320px
+
+.menu__scrolltop-arrow
+    color: white
+    font-size: 40px
+
+.menu__list
+    display: flex
+    justify-content: center
+    flex-direction: column
+    text-align: right
+    padding: 30px 50px
+    height: 600px
+
+.menu__item
+    list-style-type: none
+    padding: 30px 0
+    width: 100%
+    
+.menu__link
+    color: white
+    font-size: 28px
+    transition: all .3s
+    font-weight: 600
+    letter-spacing: 1.1px
+
+.menu__link:hover
+    color: #a9151591
+    
+.navbar
+    display: flex
+    -webkit-box-pack: justify
+    -ms-flex-pack: justify
+    justify-content: space-between
+    flex-wrap: wrap
+    padding: auto
+    padding-left: 10vw
+    padding-right: 10vw
+    width: 80vw
+    background: white
+
+.navbar__logo
+    display: flex
+    height: auto
+    align-items: center
+
+.navbar__image
+    width: 230px
+
+.navbar__nav
+    display: flex
+    width: auto
+    align-items: center
+
+.navbar__item
+    display: inline-block
+    width: auto
+
+.navbar__link
+    padding: 17px
+    font-size: 18px
+    color: black
+
+.navbar__link:hover
+    background: #A91515
+    color: white
+    transition: all .3s
+
+.header
+    position: relative
+    width: 100%
+    height: 46vw
+
+.header__wrapper
+    display: flex
+    flex-direction: column
+    justify-content: center
+    width: 100%
+    height: 100%
+    box-shadow: inset 0px -50px 23px -22px white, inset 0px 27px 6px -22px white
+
+.header__background
+    position: absolute
+    top: -65vw
+    width: 115vw
+    height: 115vw
+    right: -21vw
+    background-repeat: no-repeat
+    background-image: url(img/2.jpg) // .//
+    background-size: cover
+    z-index: -1
+
+.header__content-background
+    position: absolute
+    width: 100vw
+    height: 100vw
+    left: -50vw
+    top: -45vw
+    background: rgba(0, 0, 0, .9)
+    box-shadow: inset 85px 15px 38px -47px rgba(255,255,255,.1)
+    transform: rotate(30deg)
+    z-index: -1
+
+.header__box
+    position: relative
+    margin: 1.5vw 0
+    padding: 1vw 3.5vw .5vw 8vw
+
+.header__box--button
+    align-items: center
+    // padding-top: .1vw
+    // padding-bottom: .1vw
+    width: 25%
+    height: 5vw
+
+.header__text
+    display: inline-block
+    text-align: left
+    color: white
+    margin: 0
+    text-shadow: 2px 2px 4px #000000
+
+.header__text--title
+    font-size: 5.5vw
+    line-height: 4vw
+    font-weight: 600
+
+.header__text--description
+    font-size: 3vw
+    font-weight: 600
+
+.header__button
+    display: inline-flex
+    margin: 0
+    color: white
+    border: #A91515 .2vw solid
+    width: 27.5vw
+    justify-content: center
+    padding: 1.2vw 0
+    font-weight: 600
+    font-size: 1.6vw
+    transition: background .4s
+
+.header__button:hover
+    background: #A91515
+    color: white
+
+.header__box--phone
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-right: auto
+    width: 25vw
+
+.header__text--right
+    cursor: pointer
+    color: white
+    font-size: 3.5vw
+    width: 20vw
+
+.header__telnumber:hover
+    transition: color .4s
+
+.header__telnumber:hover
+    color: #A91515
+
+.header__icon
+    position: absolute
+    left: 31vw
+    top: 3.5vw
+    height: 100%
+    font-size: 6vw
+    height: 3vw
+    color: #A91515
+    transition: color .4s
+    transform: rotate(100deg)
+
+.header__telnumber
+    color: inherit
+
+
+
+
+
+.services
+    margin: 0 auto
+    padding-bottom: 130px
+    background: white
+
+.services__header
+    position: relative
+    padding: 50px 0 30px
+
+.services__title
+    font-size: 55px
+    width: 400px
+    margin: 0 auto
+    text-align: center
+
+.services__header:after
+    position: absolute
+    transform: translate(-63%, -50%)
+    left: 50%
+    bottom: 22%
+    content: ""
+    background: #A91515
+    height: 4.2px
+    width: 250px
+    margin: 0 auto
+
+.services__title::first-letter
+    color: #A91515
+
+.services__content
+
+.services__box
+    margin: 0 auto 30px
+    padding: 10px 0
+    width: 280px
+
+.services__subtitle
+    font-size: 24px
+    font-weight: 600
+    text-align: center
+    color: black
+    
+.services__container
+
+.services__list
+    list-style-type: none
+    padding: 0
+    display: flex
+    flex-wrap: wrap
+
+
+    align-items: center
+    justify-content: center
+
+.services__list-box
+    position: relative
+    margin: 25px 50px 25px 110px
+    border: 2px solid #CED0C6
+    width: 400px
+    height: 150px
+    padding: 0
+    display: inline-flex
+    justify-content: center
+    transition: border .3s
+
+.services__list-box:hover
+    border: 2px solid #A91515
+
+.services__text
+    font-weight: 600
+    width: 300px
+    margin: auto 0
+    text-align: center
+    font-size: 20px
+
+.services__icon
+    font-size: 24px
+    color: #A91515
+    position: absolute
+    left: -62px
+    top: 60px
+
+.about__header
+    position: relative
+    padding: 0px 0 120px
+    z-index: 3
+
+.about__title
+    font-size: 55px
+    width: 400px
+    margin: 0 auto
+    text-align: center
+    z-index: 3
+
+.about__header:after
+    position: absolute
+    transform: translate(-65%, -50%)
+    left: 50%
+    bottom: 67%
+    content: ""
+    background: #A91515
+    height: 4.2px
+    width: 145px
+    margin: 0 auto
+
+.about__title::first-letter
+    color: #A91515
+
+.about__container
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 600px
+
+.about__background
+    position: absolute
+    transform: rotate(2deg)
+    width: 110%
+    height: 700px
+    background-color: #7c0a0a
+    outline: 3px solid #A91515
+    outline-offset: 7px
+    z-index: 2
+
+.about__image
+    background: url(img/1.jpg) center center // .//
+    filter: contrast(110%)
+    box-shadow: inset 0px 80px 50px -40px #7c0a0a, inset 0px -80px 50px -40px #7c0a0a
+    background-size: cover
+    width: 500px
+    height: 620px
+    margin-bottom: 30px
+    z-index: 3
+
+.about__text
+    max-width: 600px
+    min-height: 300px
+    background-color: #A91515
+    box-shadow: inset 0px 80px 50px -40px #7c0a0a, inset 0px -80px 50px -40px #7c0a0a
+    padding: 50px
+    margin-left: 6vw
+    z-index: 3
+    p // NAZWAĆ
+        color: white
+        font-size: 24px
+        line-height: 34px
+
+
+.gallery
+    position: relative
+    height: 1150px
+    width: 100%
+
+.gallery__background
+    position: absolute
+    transform: rotate(-2deg)
+    width: 110%
+    background: whitesmoke
+    height: 1350px
+    border-bottom: 3px solid #A91515
+    outline: 7px solid black
+    outline-offset: 7px
+    top: -190px
+    bottom: -200px
+    left: -60px
+    right: -60px
+    z-index: 1
+
+.gallery__background--white-border:before
+    content: " "
+    position: absolute
+    z-index: -1
+    top: 16px
+    left: 5px
+    right: 5px
+    bottom: 5px
+    outline: 8px solid white
+    outline-offset: 8px
+
+.gallery__header
+    position: relative
+    padding: 160px 0 0
+    z-index: 2
+
+.gallery__header:after
+    position: absolute
+    transform: translate(-65%, -50%)
+    left: 50%
+    bottom: 1%
+    content: ""
+    background: #A91515
+    height: 4.2px
+    width: 129px
+    margin: 0 auto
+
+.gallery__title
+    font-size: 55px
+    width: 400px
+    margin: 0 auto
+    text-align: center
+
+.gallery__title::first-letter
+    color: #A91515
+
+.gallery__container
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    max-width: 1140px
+    margin: 0 auto
+    padding: 100px 0
+
+.gallery__item
+    position: relative
+    display: inline-block
+    height: 350px
+    // outline: 5px solid whitesmoke
+    background: #A91515
+    z-index: 2
+    flex-basis: 28%
+    margin: 15px
+    overflow: hidden
+
+.gallery__image
+    // margin: 30px 0 0 30px
+    background: grey
+    height: inherit
+    width: auto
+    min-width: 300px
+    transition: all .3s
+    cursor: pointer
+
+.gallery__image:hover
+    transform: scale(1.1)
+    transition: all 1s
+
+.gallery__image--1
+    background: url(img/photo/1.jpg) no-repeat // .//
+    background-size: 100%
+    background-position: 0 100%
+
+.gallery__image--2
+    background: url(img/photo/2.jpg) no-repeat // .//
+    background-size: 100%
+    background-position: 0 90%
+
+.gallery__image--3
+    background: url(img/photo/3.jpg) no-repeat // .//
+    background-size: 150%
+    background-position: 30% 0
+
+.gallery__image--4
+    background: url(img/photo/4.jpg) no-repeat // .//
+    background-size: 100%
+    background-position: bottom
+
+.gallery__image--5
+    background: url(img/photo/5.jpg) no-repeat // .//
+    background-size: 100%
+
+.gallery__image--6
+    background: url(img/photo/6.jpg) no-repeat // .//
+    background-size: 100%
+
+
+.contact
+    position: relative
+    background: white
+    padding-top: 100px
+
+.contact__svg
+    position: absolute
+    left: 60px
+    top: -180px
+    width: 200px
+    height: 600px
+
+.contact__electric-wire
+    width: 8px
+    height: 420px
+    background: black
+    margin: 0 auto
+
+.contact__bulb
+    bottom: 0
+    width: 200px
+    height: 200px
+    transform: rotate(180deg)
+
+.contact__header
+    position: relative
+    // padding: 160px 0 0
+
+.contact__header:after
+    position: absolute
+    transform: translate(-65%, -50%)
+    left: 50%
+    bottom: 1%
+    content: ""
+    background: #A91515
+    height: 4.2px
+    width: 139px
+    margin: 0 auto
+
+.contact__title
+    font-size: 55px
+    width: 400px
+    margin: 0 auto
+    text-align: center
+
+.contact__title::first-letter
+    color: #A91515
+
+.contact__container
+    width: 60vw
+    margin: 0 auto
+    padding-bottom: 40px
+
+.contact__box
+    margin: 0 auto 55px
+
+.contact__subtitle
+    line-height: 30px
+    font-size: 24px
+    font-weight: 600
+    text-align: center
+    color: black
+
+.contact__form
+    display: flex
+    flex-direction: column
+    height: 100%
+    max-width: 920px
+    margin: 0 auto
+
+.contact__input
+    height: 40px
+    margin-bottom: 30px
+    padding: 5px 10px
+
+.contact__textarea
+    padding: 15px 10px 5px
+    height: 200px
+
+.contact__input, .contact__textarea
+    font-family: 'Poppins', sans-serif
+    border: 2px solid #CED0C6
+    font-size: 18px
+    transition: border .3s
+
+.contact__input::placeholder, .contact__textarea::placeholder
+    font-family: 'Poppins', sans-serif
+    color: grey
+
+.contact__input:hover, .contact__textarea:hover, .contact__input:focus, .contact__textarea:focus
+    outline: none
+    border: 2px solid #A91515
+
+.contact__btn
+    cursor: pointer
+    margin: 40px auto
+    width: 130px
+    height: 50px
+    background: white
+    border: 2px solid #A91515
+    color: black
+    font-size: 20px
+    transition: all .3s
+
+.contact__btn:hover
+    background: #A91515
+    color: white
+
+
+
+
+footer
+    display: flex
+    flex-direction: column
+    justify-content: center
+    height: 200px
+    width: 100%
+    background: black
+    font-size: 22px
+    text-align: center
+    p
+        width: 100%
+        font-size: 22px
+        color: #A91515
+        padding-bottom: 20px
+        margin: 0
+        align-self: flex-end
+<<<<<<< HEAD
+
+hr
+    width: 80vw
+    background: red   
+=======
+    a
+        padding-bottom: 20px
+        margin: 0
+        text-decoration: none
+        color: #A91515
+        transition: all .2s
+    a:hover
+        color: white
+>>>>>>> 905367b... header bg changed, gallery section, light bulb svg
