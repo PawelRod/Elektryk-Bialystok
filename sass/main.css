@@ -800,8 +800,6 @@ body, html {
   bottom: 0;
   width: 200px;
   height: 200px;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
 }
 
 .contact__header {
