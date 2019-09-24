@@ -1,41 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:800&display=swap')
+    
 * > a
     text-decoration: none
+    box-sizing: border-box
     
 body, html
     margin: 0
     padding: 0
+    width: 100%
     font-family: 'Poppins', sans-serif
     overflow-x: hidden
     scroll-behavior: smooth
+    background: white
 
-.container
+body
+    overflow: hidden
+
+.section__heading
+    position: relative
+    padding: 65px 0 40px
+
+.section__heading:after
+    position: absolute
+    transform: translate(-50%, -50%)
+    left: 50%
+    bottom: 20%
+    content: "" 
+    background: #A91515
+    height: 4px
+    width: 80px
+    margin: 0 auto
+
+.section__heading--zindex
+    z-index: 2
+
+.section__title
+    font-size: 40px
+    margin: 0 auto
+    text-align: center
+    font-weight: 600
+
+
+.page
     position: relative
     left: 0
     transition: .3s left
 
-.container--move
+.page--move
     left: 350px
     transition: .3s left
 
-.container__cover
+.page__cover
     position: absolute
     top: 0
     bottom: 0
     left: 0
     right: 0
     background: rgba(0, 0, 0, .9)
-    z-index: 4
+    z-index: 5
     visibility: hidden
     opacity: 0
     transition: all .3s, background 1.5s
-    box-shadow: inset 200px 14px 163px -44px rgba(0,0,0,0.75)
+    box-shadow: inset 450px 14px 163px -44px rgba(0,0,0,0.75)
     cursor: pointer
 
-.container__cover:hover
+.page__cover:hover
     background: rgba(0,0,0, .5)
     transition: all 5s linear, all .4s linear
 
-.container__cover--dark
+.page__cover--dark
     visibility: visible
     opacity: 1
 
@@ -45,7 +78,7 @@ body, html
     height: 100%
     width: 350px
     background: #7C0A0A
-    z-index: 4
+    z-index: 5
     border-bottom: solid 1px #7C0A0A
     transition: all .3s
 
@@ -63,6 +96,7 @@ body, html
     justify-content: center
     top: 20px
     left: -60px
+    right: auto
     height: 50px
     width: 60px
     cursor: pointer
@@ -70,6 +104,9 @@ body, html
 
 .menu__button--fadein
     left: 20px
+
+.menu__button--absolute
+    position: absolute
 
 .menu__button--crucifix
     left: 260px
@@ -151,8 +188,8 @@ body, html
     justify-content: center
     flex-direction: column
     text-align: right
-    padding: 30px 50px
-    height: 600px
+    padding: 0 50px
+    height: 100%
 
 .menu__item
     list-style-type: none
@@ -175,11 +212,12 @@ body, html
     -ms-flex-pack: justify
     justify-content: space-between
     flex-wrap: wrap
-    padding: auto
-    padding-left: 10vw
-    padding-right: 10vw
-    width: 80vw
+    padding: 10px 10vw 5px 10vw
+    max-width: 1170px
+    margin: 0 auto
+    height: 100px
     background: white
+    transition: .3s height
 
 .navbar__logo
     display: flex
@@ -187,7 +225,9 @@ body, html
     align-items: center
 
 .navbar__image
-    width: 230px
+    width: 200px
+    padding: 10px 0
+    transition: .1s width
 
 .navbar__nav
     display: flex
@@ -208,403 +248,380 @@ body, html
     color: white
     transition: all .3s
 
+.navbar__link--border
+    outline: 3px #A91515 solid
+    outline-offset: -3px
+
 .header
-    position: relative
-    width: 100%
-    height: 46vw
-
-.header__wrapper
-    display: flex
-    flex-direction: column
-    justify-content: center
-    width: 100%
-    height: 100%
-    box-shadow: inset 0px -50px 23px -22px white, inset 0px 27px 6px -22px white
-
-.header__background
-    position: absolute
-    top: -65vw
-    width: 115vw
-    height: 115vw
-    right: -21vw
     background-repeat: no-repeat
-    background-image: url(img/2.jpg) // .//
+    background-image: url(../img/22gradient.jpg)
     background-size: cover
-    z-index: -1
+    background-position: center bottom
+    width: 100%
+    height: 650px
+    visibility: inherit
+    overflow-y: hidden
 
-.header__content-background
-    position: absolute
-    width: 100vw
-    height: 100vw
-    left: -50vw
-    top: -45vw
-    background: rgba(0, 0, 0, .9)
-    box-shadow: inset 85px 15px 38px -47px rgba(255,255,255,.1)
-    transform: rotate(30deg)
-    z-index: -1
-
-.header__box
-    position: relative
-    margin: 1.5vw 0
-    padding: 1vw 3.5vw .5vw 8vw
-
-.header__box--button
-    align-items: center
-    // padding-top: .1vw
-    // padding-bottom: .1vw
-    width: 25%
-    height: 5vw
-
-.header__text
-    display: inline-block
-    text-align: left
-    color: white
-    margin: 0
+.header__container
+    max-width: 1170px
+    height: 100%
+    margin: 0 auto
+    display: flex
+    flex-direction: row
+    padding: 0 10vw
     text-shadow: 2px 2px 4px #000000
 
-.header__text--title
-    font-size: 5.5vw
-    line-height: 4vw
-    font-weight: 600
-
-.header__text--description
-    font-size: 3vw
-    font-weight: 600
-
-.header__button
-    display: inline-flex
-    margin: 0
-    color: white
-    border: #A91515 .2vw solid
-    width: 27.5vw
-    justify-content: center
-    padding: 1.2vw 0
-    font-weight: 600
-    font-size: 1.6vw
-    transition: background .4s
-
-.header__button:hover
-    background: #A91515
-    color: white
-
-.header__box--phone
-    display: flex
-    align-items: center
-    justify-content: space-between
-    margin-right: auto
-    width: 25vw
-
-.header__text--right
-    cursor: pointer
-    color: white
-    font-size: 3.5vw
-    width: 20vw
-
-.header__telnumber:hover
-    transition: color .4s
-
-.header__telnumber:hover
-    color: #A91515
-
-.header__icon
-    position: absolute
-    left: 31vw
-    top: 3.5vw
+.header__column
+    width: 60%
     height: 100%
-    font-size: 6vw
-    height: 3vw
-    color: #A91515
-    transition: color .4s
-    transform: rotate(100deg)
 
-.header__telnumber
-    color: inherit
+.header__title
+    font-family: 'Montserrat', sans-serif
+    color: white
+    font-size: 65px
+    letter-spacing: 4px
+    line-height: 65px
+
+.header__description
+    font-size: 25px
+    font-style: italic
+    color: white
+    letter-spacing: 1px
+    line-height: 25px
+
+.header__box
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 90px 0
+    background: white
+    height: 80px
+    width: 400px
+    background: linear-gradient(0deg, #7c0a0a 0%, rgba(116, 0, 0, 0.723127) 52%, #7c0a0a 100%)
+
+.header__number
+    font-size: 45px
+    text-decoration: none
+    color: white
 
 
+.welcome
+    background: white // !
+    *
+        margin: 0
+        padding: 30px 0 10px 0
+        text-align: center
 
+.welcome__container
+    max-width: 1170px
+    margin: 0 auto
+    padding: 0 15px
 
+.welcome__title
+    position: relative
+    font-size: 40px
+    line-height: 60px
+
+.underline
+    display: inline-block
+    height: 50px
+    position: relative
+
+.underline:after
+    position: absolute
+    left: 2px
+    bottom: 5px
+    content: ''
+    height: 4.2px
+    width: 90px
+    background: #A91515
+    padding: 0
+
+.underline--narrow:after
+    position: absolute
+    left: 1px
+    bottom: -7px
+    content: ''
+    height: 3.5px
+    width: 50px
+    background: #A91515
+    padding: 0
+
+.welcome__text
+    font-size: 18px
+    line-height: 1.6
 
 .services
     margin: 0 auto
-    padding-bottom: 130px
+    padding-bottom: 50px
     background: white
-
-.services__header
-    position: relative
-    padding: 50px 0 30px
-
-.services__title
-    font-size: 55px
-    width: 400px
-    margin: 0 auto
-    text-align: center
-
-.services__header:after
-    position: absolute
-    transform: translate(-63%, -50%)
-    left: 50%
-    bottom: 22%
-    content: ""
-    background: #A91515
-    height: 4.2px
-    width: 250px
-    margin: 0 auto
-
-.services__title::first-letter
-    color: #A91515
-
-.services__content
-
-.services__box
-    margin: 0 auto 30px
-    padding: 10px 0
-    width: 280px
-
-.services__subtitle
-    font-size: 24px
-    font-weight: 600
-    text-align: center
-    color: black
     
 .services__container
+    max-width: 1170px
+    margin: 0 auto
 
 .services__list
-    list-style-type: none
     padding: 0
     display: flex
     flex-wrap: wrap
-
-
     align-items: center
     justify-content: center
+    transition-timing-function: cubic-bezier(.25,.46,.45,.94)
 
 .services__list-box
     position: relative
-    margin: 25px 50px 25px 110px
-    border: 2px solid #CED0C6
-    width: 400px
-    height: 150px
-    padding: 0
-    display: inline-flex
-    justify-content: center
-    transition: border .3s
+    width: 360px
+    height: 180px
+    padding: 0 15px
 
-.services__list-box:hover
-    border: 2px solid #A91515
+.services__table
+    display: table
+    margin: 40px 0px
+
+.services__left
+    display: table-cell
+    vertical-align: top
+    .services__icon
+        width: 80px
+        height: 80px
+        margin-right: 20px
+        color: #A91515
+        background: lightgrey
 
 .services__text
+    display: table-cell
+    vertical-align: top
     font-weight: 600
-    width: 300px
+    width: auto
     margin: auto 0
-    text-align: center
-    font-size: 20px
-
-.services__icon
     font-size: 24px
-    color: #A91515
-    position: absolute
-    left: -62px
-    top: 60px
+    padding-bottom: 10px
 
-.about__header
-    position: relative
-    padding: 0px 0 120px
-    z-index: 3
+.services__postscript
+    color: #737373
+    line-height: 1.6
 
-.about__title
-    font-size: 55px
-    width: 400px
-    margin: 0 auto
+.services__description
     text-align: center
-    z-index: 3
+    padding: 10px 15px 0
+    font-size: 24px
+    line-height: 1.4
 
-.about__header:after
+.call
+    position: relative
+    width: 100%
+    height: 200px
+    background: url(../img/electrical-planning.jpg) center center no-repeat
+    background-size: cover
+    z-index: 0
+
+.call::after
+    display: block
     position: absolute
-    transform: translate(-65%, -50%)
-    left: 50%
-    bottom: 67%
-    content: ""
-    background: #A91515
-    height: 4.2px
-    width: 145px
+    top: 0
+    background: linear-gradient(0deg, rgba(124, 10, 10,1) 0%, rgba(116,0,0,0.7231267507002801) 52%, rgba(124, 10, 10,1) 100%)
+    height: 100%
+    width: 100%
+    content: ''
+    z-index: -1
+
+.call__container
+    display: flex
+    flex-direction: row
+    align-items: center
+    max-width: 1170px
+    height: 100%
+    margin: 0 auto
+    padding: 0 15px
+    z-index: 1
+
+.call__column
+    width: 50%
+
+.call__text
+    color: white
+    margin: 0 0 5px 0
+
+.call__text--top
+    font-size: 45px
+    color: rgb(245,245,220)
+
+.call__text--bottom
+    font-size: 22px
+
+.call__contact
+    display: table
+    margin-top: 5px
+    width: 100%
+    p, a
+        color: white
+        font-size: 29px
+        margin: 0
+
+.call__name
+    display: table-cell
+    vertical-align: top
+    padding-left: 60px
+
+.call__nr
+    display: table-cell
+    vertical-align: top
+    width: 230px
+    a
+        text-decoration: none
+        color: lightgrey
+    a:hover
+        transition: color .4s
+        color: beige
+    i
+        margin-right: 10px
+        color: #A91515
+
+.repairs
+    width: 100%
+    height: auto
+
+.repairs__title
+    text-align: center
+    font-size: 26px
+    margin: 50px 0
+    line-height: 40px
+
+.repairs__container
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    max-width: 1170px
     margin: 0 auto
 
-.about__title::first-letter
-    color: #A91515
+.repairs__column
+    width: 250px
+    margin: 0 20px
+    font-size: 18px
+
+
+.repairs__column-title
+
+.repairs__colum
+    color: #737373
+
+.about
+    background: white
 
 .about__container
     display: flex
-    justify-content: center
-    align-items: center
-    width: 100%
-    height: 600px
+    background: whitesmoke
+    clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 100%)
 
 .about__background
-    position: absolute
-    transform: rotate(2deg)
-    width: 110%
-    height: 700px
+    position: relative
+    clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 94%)
+    width: 100%
+    padding: 80px 0
     background-color: #7c0a0a
-    outline: 3px solid #A91515
-    outline-offset: 7px
     z-index: 2
 
-.about__image
-    background: url(img/1.jpg) center center // .//
-    filter: contrast(110%)
-    box-shadow: inset 0px 80px 50px -40px #7c0a0a, inset 0px -80px 50px -40px #7c0a0a
-    background-size: cover
-    width: 500px
-    height: 620px
-    margin-bottom: 30px
+.about__text-container
+    max-width: 1170px
+    margin: 0 auto
     z-index: 3
+    p
+        color: white
+        font-size: 18px
+        line-height: 1.7
+        letter-spacing: .8px
+        margin: 0 10px
 
 .about__text
-    max-width: 600px
-    min-height: 300px
-    background-color: #A91515
-    box-shadow: inset 0px 80px 50px -40px #7c0a0a, inset 0px -80px 50px -40px #7c0a0a
-    padding: 50px
-    margin-left: 6vw
-    z-index: 3
-    p // NAZWAĆ
-        color: white
-        font-size: 24px
-        line-height: 34px
-
+    color: white
+    font-size: 22px
+    line-height: 34px
+    margin: 0 10px
 
 .gallery
     position: relative
-    height: 1150px
+    height: 900px
     width: 100%
-
-.gallery__background
-    position: absolute
-    transform: rotate(-2deg)
-    width: 110%
     background: whitesmoke
-    height: 1350px
-    border-bottom: 3px solid #A91515
-    outline: 7px solid black
-    outline-offset: 7px
-    top: -190px
-    bottom: -200px
-    left: -60px
-    right: -60px
-    z-index: 1
-
-.gallery__background--white-border:before
-    content: " "
-    position: absolute
-    z-index: -1
-    top: 16px
-    left: 5px
-    right: 5px
-    bottom: 5px
-    outline: 8px solid white
-    outline-offset: 8px
-
-.gallery__header
-    position: relative
-    padding: 160px 0 0
-    z-index: 2
-
-.gallery__header:after
-    position: absolute
-    transform: translate(-65%, -50%)
-    left: 50%
-    bottom: 1%
-    content: ""
-    background: #A91515
-    height: 4.2px
-    width: 129px
-    margin: 0 auto
-
-.gallery__title
-    font-size: 55px
-    width: 400px
-    margin: 0 auto
-    text-align: center
-
-.gallery__title::first-letter
-    color: #A91515
-
-.gallery__container
-    display: flex
-    justify-content: center
-    flex-wrap: wrap
-    max-width: 1140px
-    margin: 0 auto
-    padding: 100px 0
-
-.gallery__item
-    position: relative
-    display: inline-block
-    height: 350px
-    // outline: 5px solid whitesmoke
-    background: #A91515
-    z-index: 2
-    flex-basis: 28%
-    margin: 15px
-    overflow: hidden
-
-.gallery__image
-    // margin: 30px 0 0 30px
-    background: grey
-    height: inherit
-    width: auto
-    min-width: 300px
-    transition: all .3s
-    cursor: pointer
-
-.gallery__image:hover
-    transform: scale(1.1)
     transition: all 1s
 
-.gallery__image--1
-    background: url(img/photo/1.jpg) no-repeat // .//
-    background-size: 100%
-    background-position: 0 100%
+.gallery__container
+    width: 80%
+    max-width: 1140px
+    height: auto
+    margin: 20px auto
+    padding: 60px 0 10px 0
 
-.gallery__image--2
-    background: url(img/photo/2.jpg) no-repeat // .//
-    background-size: 100%
-    background-position: 0 90%
+.gallery__image
+    max-height: 400px
+    z-index: 2
+    width: auto
+    cursor: pointer
+    transform: scale(1)
+    transition: transform .9s
+    object-fit: cover
 
-.gallery__image--3
-    background: url(img/photo/3.jpg) no-repeat // .//
-    background-size: 150%
-    background-position: 30% 0
+.gallery__image:hover
+    transform: scale(1.05)
+    transition: transform .9s
 
-.gallery__image--4
-    background: url(img/photo/4.jpg) no-repeat // .//
-    background-size: 100%
-    background-position: bottom
+.gallery__expander
+    position: absolute
+    bottom: 0
+    width: 100%
+    height: 110px
+    line-height: 100px
+    font-size: 26px
+    font-weight: bold
+    text-align: center
+    color: #6b6969
+    z-index: 4
+    cursor: pointer
+    transition: color .3s
 
-.gallery__image--5
-    background: url(img/photo/5.jpg) no-repeat // .//
-    background-size: 100%
-
-.gallery__image--6
-    background: url(img/photo/6.jpg) no-repeat // .//
-    background-size: 100%
-
+.gallery__expander:hover
+    color: black
 
 .contact
     position: relative
     background: white
-    padding-top: 100px
+    z-index: 3
+
+.contact--shadow-outset
+    box-shadow: 0px -130px 70px 60px white
+
+.contact:after
+    content: ""
+    position: absolute
+    top: 0
+    height: 7px
+    width: 100%
+    background: black
+    transform: skewY(-3deg)
+    z-index: 4
+
+.contact:before
+    content: ""
+    position: absolute
+    top: -8px
+    height: 4px
+    width: 100%
+    background: #7C0A0A
+    transform: skewY(-3deg)
+    z-index: 4
 
 .contact__svg
     position: absolute
-    left: 60px
-    top: -180px
+    left: 1.5vw
+    top: 30px
     width: 200px
-    height: 600px
+    height: auto
 
 .contact__electric-wire
     width: 8px
-    height: 420px
+    height: 100px
     background: black
     margin: 0 auto
 
@@ -614,41 +631,17 @@ body, html
     height: 200px
     transform: rotate(180deg)
 
-.contact__header
-    position: relative
-    // padding: 160px 0 0
-
-.contact__header:after
-    position: absolute
-    transform: translate(-65%, -50%)
-    left: 50%
-    bottom: 1%
-    content: ""
-    background: #A91515
-    height: 4.2px
-    width: 139px
-    margin: 0 auto
-
-.contact__title
-    font-size: 55px
-    width: 400px
-    margin: 0 auto
-    text-align: center
-
-.contact__title::first-letter
-    color: #A91515
-
 .contact__container
     width: 60vw
     margin: 0 auto
-    padding-bottom: 40px
+    padding: 0 0 40px 0
 
 .contact__box
     margin: 0 auto 55px
 
 .contact__subtitle
     line-height: 30px
-    font-size: 24px
+    font-size: 22px
     font-weight: 600
     text-align: center
     color: black
@@ -702,33 +695,312 @@ body, html
 
 
 footer
-    display: flex
-    flex-direction: column
-    justify-content: center
-    height: 200px
     width: 100%
     background: black
     font-size: 22px
-    text-align: center
-    p
-        width: 100%
-        font-size: 22px
-        color: #A91515
-        padding-bottom: 20px
-        margin: 0
-        align-self: flex-end
-<<<<<<< HEAD
 
-hr
-    width: 80vw
-    background: red   
-=======
+.footer__container
+    max-width: 1170px
+    margin: 0 auto
+    padding: 40px 0
+    display: flex
+    flex-wrap: wrap
+    flex-direction: row
+    align-items: center
+    justify-content: center
+
+.footer__column
+    max-width: 40%
+    padding: 0 55px
+
+.footer__column--map-align
+    text-align: right
+
+.footer__logo-box
+    position: relative
+
+.footer__logo
+    width: 240px
+    
+.footer__underline
+    background: #A91515
+    height: 4.2px
+    width: 50px
+    margin-bottom: 13px
+
+.footer__credits
+    color: white
+    font-size: 17px
+
+.footer__contact
+    display: table
+    margin-bottom: 10px
+
+.footer__contact--last
+    margin-top: 20px
+
+.name
+    display: table-cell
+    vertical-align: top
+    width: 170px
+
+.nr
+    display: table-cell
+    vertical-align: top
     a
-        padding-bottom: 20px
-        margin: 0
         text-decoration: none
-        color: #A91515
-        transition: all .2s
+        color: lightgrey
     a:hover
+        transition: color .4s
+        color: #A91515
+    i
+        margin-right: 10px
+        color: #A91515
+
+iframe
+    width: 450px
+    min-width: 320px
+    height: 290px
+
+
+@media screen and (max-width: 1420px)
+    .body
+
+@media screen and (max-width: 1200px)
+    .header
+        height: 54vw
+    .header__title
+        font-size: 5.5vw
+        letter-spacing: .4vw
+        line-height: 5.4vw
+    .header__description
+        font-size: 2.1vw
+        line-height: 2.1vw
+    .header__box
+        margin: 7.5vw 0
+        height: 7vw
+        width: 33.5vw
+    .header__number
+        font-size: 3.6vw
+    .services__list-box
+        width: 290px
+        height: 220px
+    .call__name
+        padding-left: 0
+    .repairs__column
+        width: 355px
+    .gallery__background
+        height: 1270px
+        outline: 5px solid black
+    .contact__svg
+        width: 150px
+        top: -330px
+        left: 10px
+    .contact__electric-wire
+        width: 5px
+    .contact__bulb
+        width: 150px
+        height: 145px
+    .footer__column
+        max-width: none
+        width: 100%
+    iframe
+        width: 100%
+
+@media screen and (max-width: 992px)
+    .menu__button
+        left: auto
+        right: 20px
+    .menu__button--fadein
+        left: auto
+        right: 20px
+    .navbar
+        height: 75px
+        padding: 10px 0 5px 5vw
+    .navbar__nav
+        display: none
+    .navbar__image
+        width: 150px
+    .menu
+        left: -100%
+        width: 100%
+    .menu__list
+        text-align: center
+    .header__container
+        padding: 0 5vw
+    .header__description
+        font-size: 2.1vw
+        line-height: 3.1vw
+    .services__list-box
+        display: block
+        width: 100%
+        height: auto
+    .services__table
+        margin: 10px 10vw
+    .call
+        height: 280px
+    .call__container
+        flex-direction: column
+        align-items: flex-start
+        justify-content: center
+    .call__column
+        width: 100%
+        margin: 20px 0
+    .call__name
+        width: 250px
+    .repairs__column
+        width: 300px
+    .gallery__background
+        height: 1440px
+    .contact__svg
+        top: -200px
+
+@media screen and (max-width: 768px)
+    .header__column
+        width: 100%
+    .header__title
+        margin: 5vw 0
+        font-size: 6.5vw
+    .header__description
+        font-size: 3.8vw
+        line-height: 3.8vw
+    .header__box
+        margin: 4.5vw auto
+        height: 10vw
+        width: 53.5vw
+    .header__number
+        font-size: 6.6vw
+    .services__table
+        margin: 10px 0
+    .repairs__container
+        flex-direction: column
+    .repairs__column
+        width: 500px
+    .gallery__background
+        height: 1190px
+    .contact__svg
+        display: none
+    .contact__container
+        width: auto
+        padding: 0 10px 40px 10px
+    .footer__container
+        padding: 20px 0
+    .footer__column 
+        padding: 0 15px
+        margin: 10px 0
+
+@media screen and (max-width: 576px)
+    .header
+        height: 114vw
+        background-position: right bottom
+    .header__title 
+        font-size: 12.5vw
+        letter-spacing: .4vw
+        line-height: 13.4vw
+    .header__description 
+        font-size: 4.4vw
+        line-height: 5.8vw
+    .header__box
+        margin: 13.5vw auto
+        height: 20vw
+        width: 81.5vw
+    .header__number
+        font-size: 9.6vw
+    .services__subtitle
+        font-size: 24px
+    .call
+        height: 340px
+    .call__text--top
+        font-size: 41px
+    .call__contact
+        display: flex
+        flex-direction: column
+        margin-bottom: 15px
+    .repairs__column
+        width: 280px
+    .about__container
+        clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 100%)
+    .about__background
+        clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%)
+    .gallery
+        clip-path: polygon(0 0, 100% 0, 100% 98%, 0% 100%)
+    .gallery:after
+        clip-path: polygon(0 99.5%, 100% 97.5%, 100% 99.5%, 0 100%)
+    .gallery__background
+        height: 1880px
+        outline: 3px solid black
+    .contact__svg
+        width: 70px
+        top: 315px
+        left: 5px
+    .contact__electric-wire
+        width: 3px
+    .contact__bulb
+        width: 70px
+        height: 65px
+    .footer__contact
+        display: inherit
+        margin-bottom: 15px
+    .nr
+        display: inherit
+        margin-top: 5px
+    iframe
+        height: 200px
+
+// @media screen and (max-width: 360px)
+
+.modal__photo-box
+    position: fixed
+    display: block
+    z-index: 5
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background: rgba(0, 0, 0, .9)
+    transition: opacity .2s
+    opacity: 0
+    z-index: -9
+
+.div
+    position: relative
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    height: 500px
+    width: 700px
+    padding: 0 50px
+    background: black
+
+.modal__photo-box--display
+    opacity: 1
+    z-index: 5
+
+.modal__photo
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: auto
+    height: 500px
+    background-color: #303030
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
+
+.modal__exit
+    position: absolute
+    display: flex
+    align-items: center
+    justify-content: center
+    top: 25px
+    right: 25px
+    width: 20px
+    height: 20px
+    i
+        color: #b2b2b2
+        font-size: 30px
+        transition: all .3s
+        cursor: pointer
+    i:hover
         color: white
->>>>>>> 905367b... header bg changed, gallery section, light bulb svg
