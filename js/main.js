@@ -65,14 +65,48 @@ function toggleMenuEffects() {
 
 toggleMenuEffects();
 
+const galleryExpanderCover = document.querySelector('.gallery__expander-cover');
 const galleryExpander = document.querySelector('.gallery__expander');
+const galleryExpanderText = document.querySelector('.gallery__expander p');
+const galleryExpanderIcon = document.querySelector('.gallery__expander i');
+
+function galleryExpandEffects() {
+    gallery.classList.toggle("gallery--transition");
+    galleryExpanderText.textContent = "Zwiń";
+    galleryExpanderIcon.classList.toggle("rotate");
+    gallery.style.height = (photoList.clientHeight + 300) + "px";
+}
+
+function galleryCollapseEffects() {
+    galleryExpanderText.textContent = "Rozwiń";
+    gallery.style.height = "900px";
+}
 
 galleryExpander.addEventListener('click', () => {
-    gallery.style.height = (photoList.clientHeight + 250) + "px";
+    galleryExpandEffects();
+    const gallerySectionFullHeight = photoList.clientHeight + photoList.offsetTop + galleryExpanderCover.clientHeight;
+    setTimeout(() => {
+        window.scrollTo(0, gallery.offsetTop + (gallerySectionFullHeight - window.innerHeight));
+    }, 100);
     if (gallery.clientHeight > 900) {
-        gallery.style.height = "900px";
+        galleryCollapseEffects();
+        setTimeout(() => {
+            window.scrollTo(0, gallery.offsetTop);
+        }, 100);
     }
-})
+});
+
+function galleryCollapseWhenWindowResized() {
+    window.addEventListener('resize', () => {
+        if (galleryExpanderIcon.classList.contains('rotate')) {
+            galleryExpanderText.textContent = "Rozwiń";
+            galleryExpanderIcon.classList.remove('rotate')
+            gallery.style.height = "900px";
+        }
+    });
+};
+
+galleryCollapseWhenWindowResized();
 
 const photoItem = photoList.children;
 const photoUrl = document.querySelectorAll('.gallery__image')
@@ -101,3 +135,5 @@ const masonry = new Macy({
         y: 20,
     }
 });
+
+// $( "input" ).after( "<p>*</p>" );
