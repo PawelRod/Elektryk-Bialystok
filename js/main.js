@@ -4,26 +4,34 @@ const hamburgerBtn = document.querySelector(".menu__button");
 const menu = document.querySelector(".menu");
 const pageContainerCover = document.querySelector(".page__cover")
 
-function navButtonsFadeInOut() {
-    
-    const headerHeight = document.querySelector(".header").clientHeight;
-    const navbarHeight = document.querySelector(".navbar").clientHeight;
+const headerHeight = document.querySelector(".header").clientHeight;
+const navbarHeight = document.querySelector(".navbar").clientHeight;
 
-    if (window.scrollY >= headerHeight + navbarHeight) {
+function navButtonsFadeInOut() {
+    if (window.scrollY >= navbarHeight) {
+        if(window.innerWidth >= 992){
+            menu.classList.remove('menu--hidden');
+        }
         scrollTopBtn.classList.add('menu__scrolltop--fadein');
         hamburgerBtn.classList.add('menu__button--fadein');
     } else {
+        if(window.innerWidth >= 992){
+            menu.classList.add('menu--hidden');
+        }
         scrollTopBtn.classList.remove('menu__scrolltop--fadein');
         hamburgerBtn.classList.remove('menu__button--fadein');
     }
 }
 
 window.addEventListener('scroll', () => {
+    if ((window.scrollY <= navbarHeight) && (window.innerWidth <= 992)) {
+        menu.classList.remove('menu--hidden');
+    }
     navButtonsFadeInOut();
 });
 
 function pageContainerCoverDark() {
-    pageContainerCover.classList.toggle('page__cover--dark')
+    pageContainerCover.classList.toggle('page__cover--dark');
 }
 
 function scrolltopMoveRight() {
@@ -43,7 +51,7 @@ function hamburgerCrucifix() {
 }
 
 function hamburgerNavbarMobileCrucifix() {
-        hamburgerBtn.classList.toggle('menu__button--crucifix');
+    hamburgerBtn.classList.toggle('menu__button--crucifix');
 }
 
 function toggleMenuEffects() {
@@ -53,17 +61,49 @@ function toggleMenuEffects() {
 
     for (let i = 0; i < openCloseMenu.length; i++) {
         openCloseMenu[i].addEventListener('click', () => {
-            pageContainerCoverDark();
+            if(window.innerWidth <= 992) {
+                pageContainerCoverDark();
+                menuOutline();
+                scrolltopMoveRight();
+            }
             menuSlide();
-            menuOutline();
             hamburgerCrucifix();
-            scrolltopMoveRight();
         });
-        
+
     }
 }
 
 toggleMenuEffects();
+
+function resetMenuEffects() {
+    pageContainerCover.classList.remove('page__cover--dark');
+    scrollTopBtn.classList.remove('menu__scrolltop--moveright');
+    menu.classList.remove('menu--slidein');
+    menu.classList.remove('menu--outline');
+    menu.classList.add('menu--hidden');
+    hamburgerBtn.classList.remove('menu__button--crucifix');
+    if ((window.scrollY < navbarHeight) == false) {
+        setTimeout(() => {
+            menu.classList.remove('menu--hidden');
+            scrollTopBtn.classList.add('menu__scrolltop--fadein');
+        }, 600)
+    }
+}
+
+window.addEventListener('resize', () => {
+    if(window.innerWidth >= 992) {
+        resetMenuEffects();
+    } 
+    else if (window.scrollY < navbarHeight || window.innerWidth <= 992) {
+        menu.classList.remove('menu--hidden');
+    } 
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    if((window.innerWidth < 992) == true) {
+        menu.classList.remove('menu--hidden');
+    }
+});
 
 const galleryExpanderCover = document.querySelector('.gallery__expander-cover');
 const galleryExpander = document.querySelector('.gallery__expander');
@@ -113,13 +153,13 @@ const photoUrl = document.querySelectorAll('.gallery__image')
 
 for (let i=0; i<photoItem.length; i++) {
     photoItem[i].addEventListener('click', (e) => {
-        photoModal.classList.add('modal__photo-box--display');
+        photoModal.classList.add('modal--display');
         photoModalItem.src = photoUrl[i].src;
     })
 }
 
 photoModalExit.addEventListener('click', () => {
-    photoModal.classList.remove('modal__photo-box--display');
+    photoModal.classList.remove('modal--display');
 });
 
 const masonry = new Macy({
@@ -136,4 +176,9 @@ const masonry = new Macy({
     }
 });
 
-// $( "input" ).after( "<p>*</p>" );
+// var waypoint = new Waypoint({
+//     element: document.getElementById('basic-waypoint'),
+//     handler: function() {
+//       notify('Basic waypoint triggered')
+//     }
+//   })

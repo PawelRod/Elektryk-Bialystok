@@ -12,40 +12,55 @@
     <meta name="description" content="Fachowy elektryk Białystok, T-Elektryk, uprawnienia, doświadczenie, dobre opinie. Kompleksowe instalacje elektryczne (szeregówki, domki, mieszkania). Modernizacje starych instalacji. Wymiana oraz montaż gniazd, wyłączników, lamp. Podłączanie sprzętu AGD.">
     <meta itemprop="description" content="Fachowy elektryk Białystok, uprawnienia, doświadczenie, dobre opinie. Kompleksowe instalacje elektryczne (szeregówki, domki, mieszkania). Modernizacje starych instalacji. Wymiana oraz montaż gniazd, wyłączników, lamp. Podłączanie sprzętu AGD.">
     <meta id="meta-tag-description" property="og:description" content="Fachowy elektryk Białystok, uprawnienia, doświadczenie, dobre opinie. Usługi elektryczne: naprawy i zakładanie instalacji, pomiary, gwarancja.">
+    <link rel="shortcut icon" href="img/web-icon.ico" />
     <link rel="stylesheet" type="text/css" media="screen" href="sass/main.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/macy@2.5.0/dist/macy.min.js"></script>
 </head>
 <body id="home">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v4.0&appId=613668682485712&autoLogAppEvents=1"></script>
     <section class="page">
         <div class="page__cover"></div>
-        <section class="menu">
+        <section class="menu menu--hidden">
             <a class="menu__button">
                 <span class="menu__hamburger"></span>
             </a>
             <a class="menu__scrolltop" href="#home">
                 <i class="menu__scrolltop-arrow fas fa-chevron-up"></i>
             </a>
-            <ul class="menu__list">
-                <li class="menu__item">
-                    <a class="menu__link" href="#services">ZAKRES USŁUG</a>
-                </li><!--
-            --><li class="menu__item">
-                    <a class="menu__link" href="#about">O FIRMIE</a>
-                </li><!--
-            --><li class="menu__item">
-                    <a class="menu__link" href="#gallery">GALERIA</a>
-                </li><!--
-            --><li class="menu__item">
-                    <a class="menu__link" href="#contact">KONTAKT</a>
-                </li>
-            </ul>
+            <div class="menu__nav">
+                <div class="menu__logo">
+                    <a href="http://elektryk-bialystok.pl/">
+                        <img class="menu__image" src="img/logo-navbar.jpg" alt="logo">
+                    </a>
+                </div>
+                <ul class="menu__list">
+                    <li class="menu__item">
+                        <a class="menu__link" href="#services">ZAKRES USŁUG</a>
+                    </li><!--
+                --><li class="menu__item">
+                        <a class="menu__link" href="#about">O FIRMIE</a>
+                    </li><!--
+                --><li class="menu__item">
+                        <a class="menu__link" href="#gallery">GALERIA</a>
+                    </li><!--
+                --><li class="menu__item">
+                        <a class="menu__link menu__link--border" href="#contact">KONTAKT</a>
+                    </li>
+                    <!-- <div class="fb-page" 
+                    data-href="https://www.facebook.com/Elektryk-instalacje-elektryczne-195087081018949"
+                    data-width="250"
+                    data-hide-cover="false"
+                    data-show-facepile="false"></div> -->
+                </ul>
+            </div>
         </section>
         <section class="navbar">
             <div class="navbar__logo">
                 <a href="http://elektryk-bialystok.pl/">
-                    <img class="navbar__image" src="img/logoo.jpg" alt="logo">
+                    <img class="navbar__image" src="img/logo-navbar.jpg" alt="logo">
                 </a>
             </div>
             <div class="navbar__nav">
@@ -71,6 +86,7 @@
                     <h1 class="header__title">ELEKTRYK<br>BIAŁYSTOK</h1>
                     <p class="header__description">Szeroki zakres usług elektrycznych.<br>Zapoznaj się z naszą kompleksową ofertą.<br>Wykonujemy swoją prace solidnie i po<br>konkurencyjnych cenach. Sprawdź sam!</p>
                     <div class="header__box">
+                        <i class="header__icon fas fa-phone-volume"></i>
                         <a class="header__number" href="tel:+48-790-614-114">+48 790 614 114</a>
                     </div>
                 </div>
@@ -97,7 +113,7 @@
                         <div class="services__list-box">
                             <div class="services__table">
                                 <div class="services__left">
-                                    <img class="services__icon" src="img/plug.svg">
+                                    <img class="services__icon" src="img/icons/electrical-circuit.png">
                                 </div>
                                 <div class="services__right">
                                     <div class="services__text">Kompleksowe instalacje elektryczne</div>
@@ -108,7 +124,7 @@
                         <div class="services__list-box">
                             <div class="services__table">
                                 <div class="services__left">
-                                    <img class="services__icon" src="img/plug.svg">
+                                    <img class="services__icon" src="img/icons/circuit.png">
                                 </div>
                                 <div class="services__right">
                                     <div class="services__text">Modernizacja starych instalacji elektrycznych</div>
@@ -119,7 +135,7 @@
                         <div class="services__list-box">
                             <div class="services__table">
                                 <div class="services__left">
-                                    <img class="services__icon" src="img/plug.svg">
+                                    <img class="services__icon" src="img/icons/american-plug.png">
                                 </div>
                                 <div class="services__right">
                                     <div class="services__text">Wymiana lub montaż</div>
@@ -130,7 +146,7 @@
                         <div class="services__list-box">
                             <div class="services__table">
                                 <div class="services__left">
-                                    <img class="services__icon" src="img/plug.svg">
+                                    <img class="services__icon" src="img/icons/cooker.png">
                                 </div>
                                 <div class="services__right">
                                     <div class="services__text">Podłączanie sprzętu AGD</div>
@@ -141,7 +157,7 @@
                         <div class="services__list-box">
                             <div class="services__table">
                                 <div class="services__left">
-                                    <img class="services__icon" src="img/plug.svg">
+                                    <img class="services__icon" src="img/icons/switch.png">
                                 </div>
                                 <div class="services__right">
                                     <div class="services__text">Rozdzielnie i tablice</div>
@@ -152,7 +168,7 @@
                         <div class="services__list-box">
                             <div class="services__table">
                                 <div class="services__left">
-                                    <img class="services__icon" src="img/plug.svg">
+                                    <img class="services__icon" src="img/icons/electric-tower.png">
                                 </div>
                                 <div class="services__right">
                                     <div class="services__text">Zasilania placów budowy</div>
@@ -163,7 +179,7 @@
                         <div class="services__list-box">
                             <div class="services__table">
                                 <div class="services__left">
-                                    <img class="services__icon" src="img/plug.svg">
+                                    <img class="services__icon" src="img/icons/cooling-system.png">
                                 </div>
                                 <div class="services__right">
                                     <div class="services__text">Montaż klimatyzacji</div>
@@ -174,7 +190,7 @@
                         <div class="services__list-box">
                             <div class="services__table">
                                 <div class="services__left">
-                                    <img class="services__icon" src="img/plug.svg">
+                                    <img class="services__icon" src="img/icons/electrician.png">
                                 </div>
                                 <div class="services__right">
                                     <div class="services__text">Pogotowie elektryczne 24h</div>
@@ -185,7 +201,7 @@
                         <div class="services__list-box">
                             <div class="services__table">
                                 <div class="services__left">
-                                    <img class="services__icon" src="img/plug.svg">
+                                    <img class="services__icon" src="img/icons/glove.png">
                                 </div>
                                 <div class="services__right">
                                     <div class="services__text">Inne usługi</div>
@@ -308,8 +324,8 @@
                 </div>
             </div>
         </section>
-        <div id="photoModal" class="modal__photo-box">
-            <div class="div">
+        <div id="photoModal" class="modal">
+            <div class="modal__box">
                 <img id="photoModalItem" class="modal__photo">
                 <div id="photoModalExit" class="modal__exit">
                     <i class="fas fa-times"></i>
@@ -321,6 +337,7 @@
                 <div class="contact__electric-wire"></div>
                 <img class="contact__bulb" src="img/bulb.png">
             </div>
+            <img class="contact__plug-img" src="img/plugg.png">
             <div class="section__heading">
                 <p class="section__title">KONTAKT</p>
             </div>
@@ -364,7 +381,7 @@
             <div class="footer__container">
                 <div class="footer__column">
                     <div class="footer__logo-box">
-                        <img class="footer__logo" src="img/logo-black.jpg" alt="logo-footer">
+                        <img class="footer__logo" src="img/logo-footer.jpg" alt="logo-footer">
                     </div>
                     <div class="footer__underline"></div>
                     <div class="footer__credits">
@@ -390,8 +407,8 @@
                         <div class="footer__contact footer__contact--last">
                             <p class="name">Znajdź nas na:</p>
                             <div class="nr">
-                                <i class="fab fa-facebook-f"></i>
-                                <i class="fab fa-instagram"></i>
+                                <a class="fab fa-facebook-f" href="https://www.facebook.com/Elektryk-instalacje-elektryczne-195087081018949/" target="_blank"></a>
+                                <a class="fab fa-instagram" href="https://www.instagram.com/elektryk_bialystok/" target="_blank"></a>
                             </div>
                         </div>
                     </div>
@@ -399,6 +416,7 @@
                 <div class="footer__column footer__column--map-align">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1423.0429617949162!2d23.170775739186283!3d53.141366285681045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ffd3471339249%3A0x3c2fabbffac712a3!2sT-Elektryk+us%C5%82ugi+elektryczne+%C5%81ukasz+Tankiewicz!5e0!3m2!1spl!2spl!4v1566242067044!5m2!1spl!2spl" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
+                <p class="copyright">Projekt, realizacja: <a href="https://www.linkedin.com/in/pawe%C5%82-rodziewicz-6ba447189/" target="_blank">Paweł R.</a></p>
             </div>
         </footer>
     </section>
