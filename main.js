@@ -6,6 +6,7 @@ const pageContainerCover = document.querySelector(".page__cover")
 
 const headerHeight = document.querySelector(".header").clientHeight;
 const navbarHeight = document.querySelector(".navbar").clientHeight;
+const header = document.querySelector(".header");
 
 function navButtonsFadeInOut() {
     if (window.scrollY >= navbarHeight) {
@@ -100,6 +101,7 @@ window.addEventListener('resize', () => {
 });
 
 window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(function(){ header.classList.add('header-animation'); }, 200);
     if((window.innerWidth < 992) == true) {
         menu.classList.remove('menu--hidden');
     }
@@ -176,9 +178,17 @@ const masonry = new Macy({
     }
 });
 
-// var waypoint = new Waypoint({
-//     element: document.getElementById('basic-waypoint'),
-//     handler: function() {
-//       notify('Basic waypoint triggered')
-//     }
-//   })
+const banner = document.querySelector('.airc-banner');
+const bannerExit = document.querySelector('.airc-banner__btn');
+
+function bannerFadeIn() {
+    banner.classList.remove("airc-banner--visible");
+    setTimeout(() => {
+        banner.classList.remove("airc-banner--opacity");
+    }, 2000);
+};
+bannerFadeIn();
+
+bannerExit.addEventListener('click', () => {
+    banner.classList.add("airc-banner--visible");
+});
